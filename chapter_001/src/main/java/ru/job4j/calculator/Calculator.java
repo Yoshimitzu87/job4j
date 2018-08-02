@@ -8,9 +8,7 @@ package ru.job4j.calculator;
  */
 
 public class Calculator {
-    /**
-     * Калькулятор
-     */
+
     private double result;
     //сложение
     public void add(double first, double second) {
