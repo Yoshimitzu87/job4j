@@ -10,26 +10,28 @@ public class Triangle {
         this.b = b;
         this.c = c;
     }
-/**
- * Метод вычисления полупериметра по длинам сторон.
- *
- * Формула.
- *
- * (ab + ac + bc) / 2
- *
- * @param ab расстояние между точками a b
- * @param ac расстояние между точками a c
- * @param bc расстояние между точками b c
- * @return Периметр.
- */
+
+    /**
+     * Метод вычисления полупериметра по длинам сторон.
+     * <p>
+     * Формула.
+     * <p>
+     * (ab + ac + bc) / 2
+     *
+     * @param ab расстояние между точками a b
+     * @param ac расстояние между точками a c
+     * @param bc расстояние между точками b c
+     * @return Периметр.
+     */
     public double period(double ab, double ac, double bc) {
         return ((a * b) + (a * c) + (b * c));
     }
- /**
-  * Метод должен вычислить площадь треугольника.
-  *
-  * @return Вернуть прощадь, если треугольник существует или -1, если треугольника нет.
-  */
+
+    /**
+     * Метод должен вычислить площадь треугольника.
+     *
+     * @return Вернуть прощадь, если треугольник существует или -1, если треугольника нет.
+     */
     public double area() {
         double rsl = -1;
         double ab = this.a.distanceTo(this.b);
@@ -41,23 +43,27 @@ public class Triangle {
         }
         return rsl;
     }
-  /**
-  * Метод проверяет можно ли построить треугольник с такими длинами сторон.
-  * @param ab Длина от точки a b.
-  * @param ac Длина от точки a c.
-  * @param bc Длина от точки b c.
-  * @return
-  */
-       private boolean exist(double a, double b, double c) {
-            a + b != 0 ;
-            a + c != 0 ;
-            b + c != 0 ;
-            return false;
-        }
+
+    /**
+     * Метод проверяет можно ли построить треугольник с такими длинами сторон.
+     *
+     * @param ab Длина от точки a b.
+     * @param ac Длина от точки a c.
+     * @param bc Длина от точки b c.
+     * @return
+     */
     private boolean exist(double a, double b, double c) {
-        a + b > c ;
-        a + c > b ;
-        b + c > a ;
+        a + b != 0;
+        a + c != 0;
+        b + c != 0;
         return false;
     }
 
+    private boolean exist(double a, double b, double c) {
+        a + b > c;
+        a + c > b;
+        b + c > a;
+        return false;
+    }
+
+}
