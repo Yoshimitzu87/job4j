@@ -52,14 +52,14 @@ public class Triangle {
      * @param bc Длина от точки b c.
      * @return
      */
-    private boolean exist(double a, double b, double c) {
+    private boolean exist(double ab, double ac, double bc) {
         a + b != 0;
         a + c != 0;
         b + c != 0;
         return false;
     }
 
-    private boolean exist(double a, double b, double c) {
+    private boolean exist(double ab, double ac, double bc) {
         a + b > c;
         a + c > b;
         b + c > a;
