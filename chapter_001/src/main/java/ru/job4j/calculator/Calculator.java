@@ -15,17 +15,10 @@ public class Calculator {
         this.result = first + second;
     }
 
-    public double getResult() {
-        return this.result;
-    }
     /** ВЫЧИТАНИЕ
      */
     public void subtract(double first, double second) {
         this.result = first - second;
-    }
-
-    public double getResult() {
-        return this.result;
     }
     /** УМНОЖЕНИЕ
      */
@@ -33,9 +26,6 @@ public class Calculator {
         this.result = first * second;
     }
 
-    public double getResult() {
-        return this.result;
-    }
     /** ДЕЛЕНИЕ
      */
     public void div(double first, double second) {
