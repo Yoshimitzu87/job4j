@@ -24,7 +24,7 @@ public class Triangle {
      * @return Периметр.
      */
     public double period(double ab, double ac, double bc) {
-        return ((a * b) + (a * c) + (b * c));
+        return ((ab + ac + bc) / 2);
     }
 
     public double area() {
@@ -34,7 +34,7 @@ public class Triangle {
         double bc = this.b.distanceTo(this.c);
         double p = this.period(ab, ac, bc);
         if (this.exist(ab, ac, bc)) {
-            rsl = Math.sqrt(p * (p - a) * (p - b) * (p - c));
+            rsl = Math.sqrt(p * (p - ab) * (p - bc) * (p - ac));
         }
         return rsl;
         /**
@@ -51,8 +51,7 @@ public class Triangle {
     }
 
     private boolean exist(double ab, double bc, double ac) {
-        (ab + bc) > ac;
-        return false;
+        return (ab + bc > ac) || (ac + ab > bc) || (bc + ac > ab);
     }
 
 }
