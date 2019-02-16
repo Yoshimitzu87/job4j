@@ -26,6 +26,7 @@ public class Triangle {
     public double period(double ab, double ac, double bc) {
         return ((a * b) + (a * c) + (b * c));
     }
+
     public double area() {
         double rsl = -1;
         double ab = this.a.distanceTo(this.b);
@@ -33,7 +34,7 @@ public class Triangle {
         double bc = this.b.distanceTo(this.c);
         double p = this.period(ab, ac, bc);
         if (this.exist(ab, ac, bc)) {
-            rsl =  Math.sqrt(p*(p-a)*(p-b)*(p-c));
+            rsl = Math.sqrt(p * (p - a) * (p - b) * (p - c));
         }
         return rsl;
         /**
@@ -46,17 +47,14 @@ public class Triangle {
          * @param bc Длина от точки b до точки c.
          * @return
          */
-        private boolean exist(double ab, double bc, double ac) {
-            a + b != 0;
-            a + c != 0;
-            b + c != 0;
-            return false;
-        }
-        private boolean exist(double ab, double bc, double ac,) {
-            a + b > c;
-            a + c > b;
-            b + c > a;
-            return false;
-        }
+
+    }
+
+    private boolean exist(double ab, double bc, double ac) {
+        a + b > c;
+        a + c > b;
+        b + c > a;
+        return false;
     }
 }
+
