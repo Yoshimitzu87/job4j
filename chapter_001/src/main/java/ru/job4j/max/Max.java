@@ -8,12 +8,9 @@ package ru.job4j.max;
 
 public class Max {
 
-    public int max(int first, int second) {
-        int maxim = second > first ? second : first;
-        return maxim;
+    public boolean max(int first, int second, int third) {
+        return first > second || first > third || second > third || third > first;
     }
+
 }
-
-
-
 
