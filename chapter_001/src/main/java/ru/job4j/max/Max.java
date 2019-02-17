@@ -1,4 +1,5 @@
 package ru.job4j.max;
+
 /**
  * @author Anton Frolov (mailto:spitfires111@gmail.com)
  * @version $Id$
@@ -8,6 +9,9 @@ package ru.job4j.max;
 public class Max {
 
     public int max(int first, int second, int third) {
-        return Math.max(Math.max(first,second),third);
+        int maxim = second > first ? second : first;
+        int maxima = third > maxim ? third : maxim;
+        return maxima;
+
     }
 }
