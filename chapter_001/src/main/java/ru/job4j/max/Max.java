@@ -7,11 +7,23 @@ package ru.job4j.max;
  */
 
 public class Max {
-
+    /**
+     *
+     * @param first
+     * @param second
+     * @return
+     */
     public int max(int first, int second) {
         return first > second : first ? second;
     }
 
+    /**
+     *
+     * @param first
+     * @param second
+     * @param third
+     * @return
+     */
     public int max(int first, int second, int third) {
         return this.max(max(first, second), third);
     }
