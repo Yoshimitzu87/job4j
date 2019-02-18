@@ -9,7 +9,6 @@ public class Counter {
         for (int index = start; index <= finish; index++) {
             if (index % 2 == 0) {
                 i += index;
-                continue;
             }
         }
         return i;
