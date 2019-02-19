@@ -5,7 +5,7 @@ package ru.job4j.loop;
  *
  * @author Anton Frolov (spitfires111@gmail.com)
  * @version $Id$
- * @since 0.1
+ * @since 19.02.19
  */
 
 
@@ -13,11 +13,11 @@ public class Board {
     public String paint(int width, int height) {
         StringBuilder screen = new StringBuilder();
         String ln = System.lineSeparator();
-        for (width = 0; width <= 5;
-             width++) {
-            for (height = 0; height <= 4;
-                 height++) {
-                if (width + height % 2 == 0) {
+        for (int i = 0; int i <=height;
+        i++){
+            for (int j = 0; int j <=width;
+            j++){
+                if ((i + j) % 2 == 0) {
                     screen.append("X");
                 } else {
                     screen.append(" ");
