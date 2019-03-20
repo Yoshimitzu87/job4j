@@ -1,5 +1,13 @@
 package ru.job4j.array;
 
+/**
+ * CheckTest
+ *
+ * @author Anton Frolov
+ * @version $Id$
+ * @since 0.1 (20.03.2019)
+ */
+
 import org.junit.Test;
 
 import static org.hamcrest.core.Is.is;
