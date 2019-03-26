@@ -1,4 +1,5 @@
 package ru.job4j.array;
+
 /**
  * Check
  *
@@ -11,9 +12,12 @@ public class Check {
     public boolean mono(boolean[] data) {
         boolean result = true; //присваиваем резалту тру
         for (int i = 1; i < data.length; i++) {
-            if (data[0] != data[i]) // пока i меньше длинны массива сравниваем первый элемент и последующий
-                result = false; // если элементы не равны присваиваем резалту фолс
-            break;
+            if (data[0] != data[i])
+            {result = false;
+
+            break;}
+
+
         }
         return result;
     }
