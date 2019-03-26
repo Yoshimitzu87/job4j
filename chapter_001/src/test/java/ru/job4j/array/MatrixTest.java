@@ -4,7 +4,7 @@ package ru.job4j.array;
  *
  * @author Anton Frolov
  * @version $Id$
- * @since 0.1 (26.03.2019)
+ * @since 0.1 (25.03.2019)
  */
 
 
