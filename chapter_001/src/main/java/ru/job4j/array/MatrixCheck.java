@@ -12,12 +12,21 @@ public class MatrixCheck {
     public boolean mono(boolean[][] data) {
         boolean result = true;
         for (int i = 0; i < data.length; i++) {
-            if (data[i][i] != data[i + 1][i + 1] ||
-                data[i][i + 2] != data[i + 1][i + 1] ||
-                data[i + 2][i] != data[i + 1][i + 1]) {
+
+            if (data[0][0] != data[i][i]) {
+
                 result = false;
 
                 break;
+
+            }
+
+            if (data[0][2] != data[i][i]) {
+
+                result = false;
+
+                break;
+
             }
         }
         return result;
