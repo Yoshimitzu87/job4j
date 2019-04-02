@@ -75,6 +75,7 @@ public class Logic {
             if (cell == table.length || row == table.length) {
                 result = true;
                 break;
+            }
                 for (int j = 0; j < table.length; j++) {
                     cell += table[i][j];
                     row += table[j][i];
@@ -97,5 +98,5 @@ public class Logic {
 
         }
     }
-}
+
 
