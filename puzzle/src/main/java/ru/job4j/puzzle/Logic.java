@@ -69,32 +69,33 @@ public class Logic {
     public boolean isWin() {
         int[][] table = this.convert();
         boolean result = false;
-        int c = 0;
-        int r = 0;
+        int cell = 0;
+        int row = 0;
         for (int i = 0; i < table.length; i++) {
-            for (int j = 0; j < table.length; j++) {
-                c += table[i][j];
-                r += table[j][i];
-                if (c == table.length || r == table.length) {
-                    result = true;
-                    break;
-                }
-
-            }
-        }
-        return result;
-    }
-
-    public int[][] convert() {
-        int[][] table = new int[this.size][this.size];
-        for (int row = 0; row != table.length; row++) {
-            for (int cell = 0; cell != table.length; cell++) {
-                int position = this.findBy(new Cell(row, cell));
-                if (position != -1 && this.figures[position].movable()) {
-                    table[row][cell] = 1;
+            if (cell == table.length || row == table.length) {
+                result = true;
+                break;
+                for (int j = 0; j < table.length; j++) {
+                    cell += table[i][j];
+                    row += table[j][i];
                 }
             }
+            return result;
         }
-        return table;
+
+        public int[][] convert () {
+            int[][] table = new int[this.size][this.size];
+            for (int row = 0; row != table.length; row++) {
+                for (int cell = 0; cell != table.length; cell++) {
+                    int position = this.findBy(new Cell(row, cell));
+                    if (position != -1 && this.figures[position].movable()) {
+                        table[row][cell] = 1;
+                    }
+                }
+            }
+            return table;
+
+        }
     }
 }
+
