@@ -10,12 +10,14 @@ package ru.job4j.array;
 
 public class BubbleSort {
     public int[] sort(int[] array) {
-        for (int i = 0; i < array.length; i++)
+        for (int i = 0; i < array.length; i++) {
             if (array[i] > array[i + 1]) {
                 int t = array[i];
                 array[i] = array[i + 1];
                 array[i + 1] = t;
             }
+
+        }
         return array;
     }
 }

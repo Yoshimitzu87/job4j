@@ -20,4 +20,14 @@ public class ArrayDuplicateTest {
         String[] expect = {"Привет", "Мир", "Супер"};
         assertThat(result, is(expect));
     }
+
+    @Test
+    public void whenRemoveDuplicatesThenArrayWithoutDuplicates() {
+        ArrayDuplicate dup = new ArrayDuplicate ();
+        String[] input = {"audi", "bmw", "mercedes", "volkswagen", "bmw" , "bmw"};
+        String[] result = dup.remove(input);
+        String[] expect = {"audi", "bmw", "mercedes", "volkswagen"};
+        assertThat(result, is(expect));
+    }
+
 }
