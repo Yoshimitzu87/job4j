@@ -10,7 +10,6 @@ import java.util.Arrays;
  * @since 0.1 (26.03.2019)
  */
 public class ArrayDuplicate {
-
     public String[] remove(String[] array) {
         int l = array.length; //присваиваем переменной l длинну массива array
         for (int i = 0; i < l; i++)
@@ -22,8 +21,6 @@ public class ArrayDuplicate {
                 }
 
             }
-
-
         return Arrays.copyOf(array, l);
     }
 }
