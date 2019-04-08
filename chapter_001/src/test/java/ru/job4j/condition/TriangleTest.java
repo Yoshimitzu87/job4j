@@ -1,5 +1,11 @@
 package ru.job4j.condition;
-
+/**
+ * TriangleTest.
+ *
+ * @author Anton Frolov (spitfires111@gmail.com)
+ * @version $Id$
+ * @since 0.1
+ */
 import org.junit.Test;
 import static org.hamcrest.number.IsCloseTo.closeTo;
 import static org.junit.Assert.*;
