@@ -49,7 +49,7 @@ public class PaintTest {
         );
     }
     @Test
-    public void whenPyramid(){
+    public void whenPyramid() {
         Paint paint = new Paint();
         String rst = paint.pyramid(4);
         System.out.println(rst);

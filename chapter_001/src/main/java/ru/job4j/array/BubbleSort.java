@@ -9,15 +9,18 @@ package ru.job4j.array;
  */
 
 public class BubbleSort {
-    public int[] sort(int[] array) {
-        for (int i = 0; i < array.length; i++) {
-            if (array[i] > array[i + 1]) {
-                int t = array[i];
-                array[i] = array[i + 1];
-                array[i + 1] = t;
-            }
 
+    public int[] sort(int[] bubble) {
+        for (int i = bubble.length - 1; i > 0; i--) {
+            for (int j = 0; j < i; j++) {
+
+                if (bubble[j] > bubble[j + 1]) {
+                    int tmp = bubble[j];
+                    bubble[j] = bubble[j + 1];
+                    bubble[j + 1] = tmp;
+                }
+            }
         }
-        return array;
+        return bubble;
     }
 }
