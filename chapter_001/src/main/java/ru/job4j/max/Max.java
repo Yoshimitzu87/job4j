@@ -15,4 +15,10 @@ public class Max {
         int tmp = max(first, second);
         return max(third,tmp);
     }
+
+    public int max(int first, int second, int third, int fourth){
+        int tmp = max(first, second);
+        int tmp1 = max(tmp,third);
+        return max(fourth,tmp1);
+    }
 }
