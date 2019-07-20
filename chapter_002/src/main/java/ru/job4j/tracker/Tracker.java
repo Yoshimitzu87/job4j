@@ -6,7 +6,7 @@ import java.util.Random;
 public class Tracker {
 
     /**
-     * Массив для хранение заявок.
+     * Массив для хранения заявок.
      */
     private Item[] items = new Item[100];
 
@@ -33,7 +33,6 @@ public class Tracker {
      */
     public boolean replace(String id, Item item) {
         boolean result = false;
-        //findById(id);
         for (int i = 0; i < position; i++) {
             if (items[i] != null && items[i].getId().equals(id)) {
                 items[i] = item;
@@ -66,7 +65,8 @@ public class Tracker {
      * Метод находит все не пустые заявки.
      * @return массив заявок.
      */
-    public Item[] findAll() { return Arrays.copyOf(this.items, this.position); }
+    public Item[] findAll() {
+        return Arrays.copyOf(this.items, this.position); }
 
     /**
      * Метод ищет завяки по ключу.
@@ -105,7 +105,7 @@ public class Tracker {
      * Так как у заявки нет уникальности полей, имени и описание. Для идентификации нам нужен уникальный ключ.
      * @return Уникальный ключ.
      */
-    private String generateId(){
+    private String generateId() {
         return String.valueOf(System.currentTimeMillis() + RN.nextInt(100));
     }
 }

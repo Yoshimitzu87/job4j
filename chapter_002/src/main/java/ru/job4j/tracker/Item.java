@@ -15,31 +15,31 @@ public class Item {
     }
 
     public String getId() {
-        return id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getDesc() {
-        return desc;
-    }
-
-    public long getTime() {
-        return time;
+        return this.id;
     }
 
     public void setId(String id) {
         this.id = id;
     }
 
+    public String getName() {
+        return this.name;
+    }
+
     public void setName(String name) {
         this.name = name;
     }
 
+    public String getDesc() {
+        return this.desc;
+    }
+
     public void setDesc(String desc) {
         this.desc = desc;
+    }
+
+    public long getTime() {
+        return this.time;
     }
 
     public void setTime(long time) {
@@ -48,13 +48,20 @@ public class Item {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null
+                || getClass()
+                != o.getClass()) {
+            return false;
+        }
+
         Item item = (Item) o;
-        return time == item.time &&
-                Objects.equals(id, item.id) &&
-                Objects.equals(name, item.name) &&
-                Objects.equals(desc, item.desc);
+        return time == item.time
+                && Objects.equals(id, item.id)
+                && Objects.equals(name, item.name)
+                && Objects.equals(desc, item.desc);
     }
 
     @Override
