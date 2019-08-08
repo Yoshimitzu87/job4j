@@ -45,7 +45,7 @@ public class Tracker {
     }
 
     /**
-     * Метод удалят заявка с идентификатором id.
+     * Метод удаляет заявку с идентификатором id.
      * @param id - идентификатор для удаления.
      * @return
      */
@@ -55,6 +55,7 @@ public class Tracker {
             if (items[i] != null && items[i].getId().equals(id)) {
                 System.arraycopy(this.items, i + 1, items, i, position - i - 1);
                 result = true;
+                position--;
                 break;
             }
         }
@@ -91,7 +92,8 @@ public class Tracker {
      */
     public Item findById(String id) {
         Item result = null;
-        for (Item item : items) {
+        for (int i = 0; i < position; i++) {
+            Item item = items[i];
             if (item != null && item.getId().equals(id)) {
                 result = item;
                 break;
@@ -99,7 +101,6 @@ public class Tracker {
         }
         return result;
     }
-
     /**
      * Метод генерирует уникальный ключ для заявки.
      * Так как у заявки нет уникальности полей, имени и описание. Для идентификации нам нужен уникальный ключ.
