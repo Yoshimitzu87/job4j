@@ -13,8 +13,8 @@ import java.util.Arrays;
 
 public class Merge {
     public static void main(String[] args) {
-        int[] a = {1, 3, 5, 7, 9};
-        int[] b = {2, 4, 6, 8, 10};
+        int[] a = {3, 1, 5, 7, 9, 11, 13, 15, 17};
+        int[] b = {2, 4, 6, 8, 10, 12, 14, 16, 18, 20};
         int[] result = new int[a.length + b.length];
         System.arraycopy(a, 0, result, 0, a.length);
         System.arraycopy(b, 0, result, a.length, b.length);
@@ -26,6 +26,7 @@ public class Merge {
                     result[i + 1] = tmp;
                 }
             }
-            }System.out.println(Arrays.toString(result));
+            }
+            System.out.println(Arrays.toString(result));
     }
 }
