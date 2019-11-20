@@ -15,7 +15,7 @@ public class JukeBox {
     public static void main(String[] args) {
         for (int position = 0; position < 3; position++) {
             JukeBox tOne = new JukeBox();
-            System.out.println("Track Playing:");
+            System.out.println("Играет:");
 
             tOne.music(position);
 
