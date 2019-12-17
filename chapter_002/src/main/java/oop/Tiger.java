@@ -1,8 +1,10 @@
 package oop;
 
-public class Tiger {
+public class Tiger extends Predator {
 
-    public Tiger() {
+    public Tiger(){}
+
+    public Tiger(String name) {
         super();
         System.out.println("TIGER CLASS");
 

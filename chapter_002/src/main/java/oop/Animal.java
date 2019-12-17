@@ -2,7 +2,8 @@ package oop;
 
 
 public class Animal {
-    public Animal () {
+    public  Animal () {}
+    public Animal (String name) {
         super();
         System.out.println("ANIMAL CLASS");
     }
