@@ -9,7 +9,7 @@ public class Tiger extends Predator {
 
     public Tiger(String name) {
         super(name);
-        System.out.println("TIGER CLASS");
+        System.out.println("TIGER");
 
     }
 
