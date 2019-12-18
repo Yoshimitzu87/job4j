@@ -2,10 +2,13 @@ package oop;
 
 public class Tiger extends Predator {
 
-    public Tiger(){}
+
+    public Tiger(){
+        super();
+    }
 
     public Tiger(String name) {
-        super();
+        super(name);
         System.out.println("TIGER CLASS");
 
     }
