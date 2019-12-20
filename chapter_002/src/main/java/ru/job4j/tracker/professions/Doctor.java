@@ -1,9 +1,9 @@
 package ru.job4j.tracker.professions;
 
 public class Doctor extends Profession {
-    public String exp; //Стаж,Опыт
-    public String spec; //Специализация
-    public int cost; //Стоимость услуги
+    private String exp; //Стаж,Опыт
+    private String spec; //Специализация
+    private int cost; //Стоимость услуги
 
     public Doctor(String name, String surname, String education, int age) {
         super(name, surname, education, age);

@@ -3,10 +3,10 @@ package ru.job4j.tracker.professions;
 
 
 public class Profession {
-    public String name;
-    public String surname;
-    public String education;
-    public int age;
+    private String name;
+    private String surname;
+    private String education;
+    private int age;
 
     public Profession (String name, String surname, String education, int age) {
 

@@ -2,9 +2,9 @@ package ru.job4j.tracker.professions;
 
 
 public class Diagnose {
-    public Doctor doctor;
-    public Patient patient;
-    public String description;
+    private Doctor doctor;
+    private Patient patient;
+    private String description;
 
 
     public Diagnose(Doctor doctor, Patient patient, String description) {

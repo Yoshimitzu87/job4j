@@ -1,7 +1,7 @@
 package ru.job4j.tracker.professions;
 
 public class Patient {
-    public String name;
+    private String name;
 
     public Patient(String name) {
         this.name = name;
