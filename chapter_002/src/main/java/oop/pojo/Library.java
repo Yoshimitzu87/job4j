@@ -20,12 +20,14 @@ public class Library {
             System.out.println(bk.getName() + " - " + bk.getPages());
         }
 
+
         System.out.println("Replace third to first");
 
+        Book temp = bookz[0];
+        bookz[0] = bookz[2];
+        bookz[2] = temp;
+
         for (int index = 0; index < bookz.length; index++) {
-            Book temp = bookz[0];
-            bookz[0] = bookz[2];
-            bookz[2] = temp;
             Book bk = bookz[index];
             System.out.println(bk.getName() + " - " + bk.getPages());
         }
@@ -34,9 +36,9 @@ public class Library {
 
         for (int index = 0; index < bookz.length; index++) {
             Book bk = bookz[index];
-            if (bk.getName().equals(("Cleancode"))); {
+            if (bk.getName().equals(("Cleancode")))
                 System.out.println(bk.getName() + " - " + bk.getPages());
-            }
-        }
+
+     }
     }
 }
