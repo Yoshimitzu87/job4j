@@ -76,4 +76,23 @@ public class Tracker {
     private String generateId() {
         return String.valueOf(System.currentTimeMillis() + RN.nextInt(100));
     }
-}
+
+    /**
+     * Метод перезаписывает заявку с идентификатором id на заявку item.
+     * @param id - идентификатор заявки.
+     * @param item - заявка для замены.
+     * @return результат замены.
+     */
+    public boolean replace(String id, Item item) {
+        boolean result = false;
+        for (int i = 0; i < position; i++) {
+            if (items[i] != null && items[i].getId().equals(id)) {
+                items[i] = item;
+                items[i].setId(id);
+                result = true;
+                break;
+            }
+        }
+        return result;
+    }
+    }
