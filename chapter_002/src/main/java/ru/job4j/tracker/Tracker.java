@@ -58,21 +58,24 @@ public class Tracker {
      * @return заявка с таким id.
      */
     public Item findById(String id) {
-        Item result = null;
-        for (int i = 0; i < position; i++) {
-            Item item = items[i];
-            if (item != null && item.getId().equals(id)) {
-                result = item;
-                break;
-            }
-        }
-        return result;
+        return items[indexOf(id)];
     }
     /**
      * Метод генерирует уникальный ключ для заявки.
      * Так как у заявки нет уникальности полей, имени и описание. Для идентификации нам нужен уникальный ключ.
      * @return Уникальный ключ.
      */
+    private int indexOf(String id) {
+        int rsl = -1;
+        for (int index = 0; index < position; index++) {
+            if (items[index].getId().equals(id)) {
+                rsl = index;
+                break;
+            }
+        }
+        return rsl;
+    }
+
     private String generateId() {
         return String.valueOf(System.currentTimeMillis() + RN.nextInt(100));
     }
