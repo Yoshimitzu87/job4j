@@ -1,7 +1,7 @@
 package ru.job4j.inout;
 
-import java.util.Scanner;
-import java.util.Random;
+        import java.util.Scanner;
+        import java.util.Random;
 
 public class MagickBall {
     public static void main(String[] args) {

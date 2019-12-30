@@ -66,7 +66,7 @@ public class Tracker {
      * @return Уникальный ключ.
      */
     private int indexOf(String id) {
-        int rsl = -1;
+        int rsl = 0;
         for (int index = 0; index < position; index++) {
             if (items[index].getId().equals(id)) {
                 rsl = index;
