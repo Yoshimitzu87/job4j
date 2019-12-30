@@ -57,8 +57,10 @@ public class Tracker {
      * @param id индекс для поиска.
      * @return заявка с таким id.
      */
-    public Item findById(String id) {
-        return items[indexOf(id)];
+    public  Item findById(String id) {
+        Item res = null;
+        if (indexOf(id) != -1) { res = items[indexOf(id)]; }
+        return res;
     }
     /**
      * Метод генерирует уникальный ключ для заявки.
@@ -66,7 +68,7 @@ public class Tracker {
      * @return Уникальный ключ.
      */
     private int indexOf(String id) {
-        int rsl = 0;
+        int rsl = -1;
         for (int index = 0; index < position; index++) {
             if (items[index].getId().equals(id)) {
                 rsl = index;
