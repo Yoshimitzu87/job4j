@@ -59,9 +59,12 @@ public class Tracker {
      */
     public  Item findById(String id) {
         Item res = null;
-        if (indexOf(id) != -1) { res = items[indexOf(id)]; }
+         int rs = indexOf(id);
+        if (rs != -1) { res = items[rs]; }
         return res;
     }
+
+
     /**
      * Метод генерирует уникальный ключ для заявки.
      * Так как у заявки нет уникальности полей, имени и описание. Для идентификации нам нужен уникальный ключ.

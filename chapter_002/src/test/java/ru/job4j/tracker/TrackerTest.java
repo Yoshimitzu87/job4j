@@ -63,7 +63,7 @@ public class TrackerTest {
         Item item = new Item("test1","testDescription1", 123L);
         tracker.add(item);
         String id = item.getId();
-        Item item2 = new Item("test2","testDesciption2",1234L);
+        Item item2 = new Item("test2","testDescription2",1234L);
         tracker.replace(id, item2);
         assertThat(tracker.findById(id).getName(), is("test2"));
     }
