@@ -94,6 +94,7 @@ public class Tracker {
         boolean result = false;
         for (int i = 0; i < position; i++) {
             if (items[i] != null && items[i].getId().equals(id)) {
+                items[i] = null;
                 System.arraycopy(this.items, i + 1, items, i, position - i - 1);
                 result = true;
                 position--;
