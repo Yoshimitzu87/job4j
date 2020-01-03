@@ -67,4 +67,11 @@ public class TrackerTest {
         tracker.replace(id, item2);
         assertThat(tracker.findById(id).getName(), is("test2"));
     }
+    @Test
+    public void whenDeleteItemThenTrackerDoesNotHaveSameItem() {
+        Tracker tracker = new Tracker();
+        Item item = new Item("test1", "testDescription", 123L);
+        tracker.add(item);
+        assertTrue(tracker.deleteId(item.getId()));
+    }
 }

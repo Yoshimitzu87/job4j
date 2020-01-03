@@ -86,6 +86,24 @@ public class Tracker {
     }
 
     /**
+     * Метод удаляет заявку с идентификатором id.
+     * @param id - идентификатор для удаления.
+     * @return
+     */
+    public boolean deleteId(String id) {
+        boolean result = false;
+        for (int i = 0; i < position; i++) {
+            if (items[i] != null && items[i].getId().equals(id)) {
+                System.arraycopy(this.items, i + 1, items, i, position - i - 1);
+                result = true;
+                position--;
+                break;
+            }
+        }
+        return result;
+    }
+
+    /**
      * Метод перезаписывает заявку с идентификатором id на заявку item.
      * @param id - идентификатор заявки.
      * @param item - заявка для замены.
