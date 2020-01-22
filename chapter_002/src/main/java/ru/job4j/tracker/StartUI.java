@@ -4,6 +4,12 @@ import java.util.Scanner;
 
 public class StartUI {
 
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        Tracker tracker = new Tracker();
+        new StartUI().init(scanner, tracker);
+    }
+
     public void init(Scanner scanner, Tracker tracker) {
         boolean run = false;
         while (run) {
@@ -29,16 +35,24 @@ public class StartUI {
                 String id = scanner.nextLine();
                 System.out.print("Enter a new name: ");
                 String name = scanner.nextLine();
-                Item item = new Item(name);
-                tracker.replace(id, item);
-                System.out.println(item.getName());
+                Item item = new Item(name, id);
+                if (item == null) {
+                    System.out.println("Item with id:" + id + name + "don't exist yet!");
+                } else {
+                    tracker.replace(id, item);
+                    System.out.println(item.getName());
+                }
 
             } else if (select == 3) {
                 System.out.println("=== Delete item ====");
                 System.out.print("Enter id: ");
                 String id = scanner.nextLine();
-                tracker.deleteId(id);
-                System.out.println(item.getId());
+                if (item == null) {
+                    System.out.println("Item with id:" + id + "don't exist yet!");
+                } else {
+                    tracker.deleteId(id);
+                    System.out.println(item.getId());
+                }
 
 
             } else if (select == 4) {
@@ -46,8 +60,11 @@ public class StartUI {
                 System.out.print("Enter id: ");
                 String id = scanner.nextLine();
                 item = tracker.findById(id);
-                if (item == null) { System.out.println("Item with id:" + id + "dont exist!" ); }
-                else { System.out.println(item.getName());}
+                if (item == null) {
+                    System.out.println("Item with id:" + id + "dont exist!");
+                } else {
+                    System.out.println(item.getName());
+                }
 
 
             } else if (select == 5) {
@@ -74,12 +91,5 @@ public class StartUI {
         System.out.println("4. Find item by Id");
         System.out.println("5. Find items by name");
         System.out.println("6. Exit Program");
-    }
-
-
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        Tracker tracker = new Tracker();
-        new StartUI().init(scanner, tracker);
     }
 }
