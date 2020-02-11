@@ -7,3 +7,4 @@ public interface Transport {
     public void passengers(int count);
 
     public int refill(int liters);
+}
