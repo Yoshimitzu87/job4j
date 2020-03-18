@@ -90,7 +90,7 @@ public class Tracker {
      * @param id - идентификатор для удаления.
      * @return
      */
-    public boolean deleteId(String id) {
+    public Item deleteId(String id) {
         boolean result = false;
         for (int i = 0; i < position; i++) {
             if (items[i] != null && items[i].getId().equals(id)) {
