@@ -5,16 +5,15 @@ import java.util.Random;
 
 public class Tracker {
 
+    private static final Random RN = new Random();
     /**
      * Массив для хранения заявок.
      */
     private Item[] items = new Item[100];
-
     /**
      * Указатель ячейки для новой заявки.
      */
     private int position = 0;
-    private static final Random RN = new Random();
 
     /**
      * Метод реализаущий добавление заявки в хранилище
@@ -38,6 +37,7 @@ public class Tracker {
 
     /**
      * Метод ищет завяки по ключу.
+     *
      * @param key - ключ.
      * @return массив найденых заявок.
      */
@@ -52,15 +52,19 @@ public class Tracker {
         }
         return Arrays.copyOf(findByNameItems, j);
     }
+
     /**
      * Метод реализаущий поиск заявки по id.
+     *
      * @param id индекс для поиска.
      * @return заявка с таким id.
      */
-    public  Item findById(String id) {
+    public Item findById(String id) {
         Item res = null;
-         int rs = indexOf(id);
-        if (rs != -1) { res = items[rs]; }
+        int rs = indexOf(id);
+        if (rs != -1) {
+            res = items[rs];
+        }
         return res;
     }
 
@@ -68,6 +72,7 @@ public class Tracker {
     /**
      * Метод генерирует уникальный ключ для заявки.
      * Так как у заявки нет уникальности полей, имени и описание. Для идентификации нам нужен уникальный ключ.
+     *
      * @return Уникальный ключ.
      */
     private int indexOf(String id) {
@@ -87,10 +92,11 @@ public class Tracker {
 
     /**
      * Метод удаляет заявку с идентификатором id.
+     *
      * @param id - идентификатор для удаления.
      * @return
      */
-    public Item deleteId(String id) {
+    public boolean deleteId(String id) {
         boolean result = false;
         for (int i = 0; i < position; i++) {
             if (items[i] != null && items[i].getId().equals(id)) {
@@ -106,7 +112,8 @@ public class Tracker {
 
     /**
      * Метод перезаписывает заявку с идентификатором id на заявку item.
-     * @param id - идентификатор заявки.
+     *
+     * @param id   - идентификатор заявки.
      * @param item - заявка для замены.
      * @return результат замены.
      */
@@ -122,4 +129,4 @@ public class Tracker {
         }
         return result;
     }
-    }
+}

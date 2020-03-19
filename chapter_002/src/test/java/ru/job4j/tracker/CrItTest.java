@@ -9,7 +9,7 @@ public class CrItTest {
 
     @Test
     public void whenCreateItem() {
-        String[] answers = {"New Item", "New desc", "11"};
+        String[] answers = {"New Item", "New desc", String.valueOf(11)};
         Input input = new StubInput(answers);
         Tracker tracker = new Tracker();
         StartUI.createItem(input, tracker);

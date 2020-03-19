@@ -95,11 +95,11 @@ public class StartUI {
                 StartUI.findByName(input, tracker);
 
                 System.out.println();
-        }     else if (select == 6) {
-                    run = false;
-                }
+            } else if (select == 6) {
+                run = false;
             }
         }
+    }
 
 
     private void showMenu() {
