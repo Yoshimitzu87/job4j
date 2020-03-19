@@ -5,6 +5,7 @@ import java.util.Random;
 
 public class Tracker {
 
+
     private static final Random RN = new Random();
     /**
      * Массив для хранения заявок.
@@ -129,4 +130,5 @@ public class Tracker {
         }
         return result;
     }
+
 }
