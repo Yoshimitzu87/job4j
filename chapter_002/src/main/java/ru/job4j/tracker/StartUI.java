@@ -102,7 +102,7 @@ public class StartUI {
     }
 
 
-    private void showMenu() {
+    public void showMenu() {
         System.out.println("Menu.");
         System.out.println("0. Add new Item");
         System.out.println("1. Show all items");
