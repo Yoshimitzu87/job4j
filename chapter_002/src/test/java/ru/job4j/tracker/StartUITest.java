@@ -1,9 +1,10 @@
 package ru.job4j.tracker;
 
 import org.junit.Test;
-import sun.font.TrueTypeFont;
+
 
 import static org.hamcrest.core.Is.is;
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.assertThat;
 
@@ -21,24 +22,28 @@ public class StartUITest {
 
 
     @Test
-    public void whenAddNewItemThenTrackerHasSameItem() {
+    public void whenCreateItem() {
+        String[] answers = {"test1"};
+        Input input = new StubInput(answers);
         Tracker tracker = new Tracker();
-        long created = System.currentTimeMillis();
-        Item item = new Item("test1", "testDescription", created);
-        tracker.add(item);
-        Item result = tracker.findById(item.getId());
-        assertThat(result.getName(), is(item.getName()));
+        UserAction create = new CreateAction();
+        create.execute(input, tracker);
+        Item created = tracker.findAll()[0];
+        Item expected = new Item("test1");
+        assertThat(created.getName(), is(expected.getName()));
     }
 
     @Test
-    public void whenReplace() {
+    public void whenDelete() {
         Tracker tracker = new Tracker();
-        Item item = new Item("test1", "testDescription1", 123L);
+        Item item = new Item("test");
         tracker.add(item);
-        String id = item.getId();
-        Item item2 = new Item("test2", "testDescription2", 1234L);
-        tracker.replace(id, item2);
-        assertThat(tracker.findById(id).getName(), is("test2"));
+        String[] answer = {item.getId()};
+        Input input = new StubInput(answer);
+        UserAction delete = new DeleteAction();
+        delete.execute(input, tracker);
+        String expected = null;
+        assertThat(tracker.findById(item.getId()), is(expected));
     }
 
 }
