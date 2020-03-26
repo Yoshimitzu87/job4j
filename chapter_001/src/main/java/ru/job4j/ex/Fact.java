@@ -5,7 +5,7 @@ public class Fact {
 
     }
 
-    public int calc(int n) {
+    public static int calc(int n) {
         if (n < 0){
             throw new IllegalArgumentException("Cant count with negative number");}
         int rsl = 1;
