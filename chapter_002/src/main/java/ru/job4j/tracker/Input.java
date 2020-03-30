@@ -5,5 +5,5 @@ public interface Input {
 
     int askInt(String question);
 
-        int askInt(String question, int max);
+    int askInt(String question, int max);
 }
