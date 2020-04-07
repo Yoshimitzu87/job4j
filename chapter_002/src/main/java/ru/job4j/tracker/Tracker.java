@@ -1,85 +1,55 @@
 package ru.job4j.tracker;
 
-import java.util.Arrays;
+
 import java.util.Random;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Tracker {
 
 
-    private static final Random RN = new Random();
-    /**
-     * Массив для хранения заявок.
-     */
-    private Item[] items = new Item[100];
-    /**
-     * Указатель ячейки для новой заявки.
-     */
-    private int position = 0;
+    private final List<Item> items = new ArrayList<>();
 
-    /**
-     * Метод реализаущий добавление заявки в хранилище
-     *
-     * @param item новая заявка
-     */
+
+
+
     public Item add(Item item) {
         item.setId(this.generateId());
-        this.items[this.position++] = item;
+        items.add(item);
         return item;
     }
 
-    /**
-     * Метод находит все не пустые заявки.
-     *
-     * @return массив заявок.
-     */
-    public Item[] findAll() {
-        return Arrays.copyOf(this.items, this.position);
+    private String generateId() {
+        Random rm = new Random();
+        return String.valueOf(rm.nextLong() + System.currentTimeMillis());
     }
 
-    /**
-     * Метод ищет завяки по ключу.
-     *
-     * @param key - ключ.
-     * @return массив найденых заявок.
-     */
-    public Item[] findByName(String key) {
-        Item[] findByNameItems = new Item[position];
-        int j = 0;
-        for (int i = 0; i < position; i++) {
-            if (this.items[i] != null && this.items[i].getName().equals(key)) {
-                findByNameItems[j] = this.items[i];
-                j++;
+    public List<Item> findAll() {
+        return items;
+    }
+
+
+    public List<Item> findByName(String key) {
+        List<Item> listOfNames = new ArrayList<>();
+        for (Item item : items) {
+            if (item.getName().contains(key)) {
+                listOfNames.add(item);
             }
         }
-        return Arrays.copyOf(findByNameItems, j);
+        return listOfNames;
     }
 
-    /**
-     * Метод реализаущий поиск заявки по id.
-     *
-     * @param id индекс для поиска.
-     * @return заявка с таким id.
-     */
+
     public Item findById(String id) {
-        Item res = null;
-        int rs = indexOf(id);
-        if (rs != -1) {
-            res = items[rs];
-        }
-        return res;
+        int index = indexOf(id);
+        return index != -1 ? items.get(index) : null;
     }
 
 
-    /**
-     * Метод генерирует уникальный ключ для заявки.
-     * Так как у заявки нет уникальности полей, имени и описание. Для идентификации нам нужен уникальный ключ.
-     *
-     * @return Уникальный ключ.
-     */
     private int indexOf(String id) {
         int rsl = -1;
-        for (int index = 0; index < position; index++) {
-            if (items[index].getId().equals(id)) {
+        for (int index = 0; index < items.size(); index++) {
+            if (items.get(index).getId().equals(id)) {
                 rsl = index;
                 break;
             }
@@ -87,46 +57,26 @@ public class Tracker {
         return rsl;
     }
 
-    private String generateId() {
-        return String.valueOf(System.currentTimeMillis() + RN.nextInt(100));
-    }
 
-    /**
-     * Метод удаляет заявку с идентификатором id.
-     *
-     * @param id - идентификатор для удаления.
-     * @return
-     */
+
     public boolean deleteId(String id) {
         boolean result = false;
-        for (int i = 0; i < position; i++) {
-            if (items[i] != null && items[i].getId().equals(id)) {
-                items[i] = null;
-                System.arraycopy(this.items, i + 1, items, i, position - i - 1);
-                result = true;
-                position--;
-                break;
-            }
+        int index = indexOf(id);
+        if (index != -1) {
+            items.remove(items.get(index));
+            result = true;
         }
         return result;
     }
 
-    /**
-     * Метод перезаписывает заявку с идентификатором id на заявку item.
-     *
-     * @param id   - идентификатор заявки.
-     * @param item - заявка для замены.
-     * @return результат замены.
-     */
+
     public boolean replace(String id, Item item) {
         boolean result = false;
-        for (int i = 0; i < position; i++) {
-            if (items[i] != null && items[i].getId().equals(id)) {
-                items[i] = item;
-                items[i].setId(id);
-                result = true;
-                break;
-            }
+        int index = indexOf(id);
+        if (index != -1){
+            item.setId(id);
+            items.set(index, item);
+            result = true;
         }
         return result;
     }
