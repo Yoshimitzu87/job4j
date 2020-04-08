@@ -1,20 +1,22 @@
-package ru.job4j.loop;
+/**package ru.job4j.loop;
+
+import ru.job4j.collecion.PhoneDictionary;
 
 import java.util.LinkedList;
 
 public class PriorityQueue {
-    private LinkedList<Task> tasks = new LinkedList<>();
+    private LinkedList<PhoneDictionary.Task> tasks = new LinkedList<>();
 
-    /**
+
      * Метод должен вставлять в нужную позицию элемент.
      * Позиция определять по полю приоритет.
      * Для вставки использовать add(int index, E value)
      *
      * @param task задача
-     */
-    public void put(Task task) {
+     *
+    public void put(PhoneDictionary.Task task) {
         int index = 0;
-        for (Task element : tasks) {
+        for (PhoneDictionary.Task element : tasks) {
             if (element.getPriority() < task.getPriority()) {
                 index++;
             }
@@ -24,7 +26,8 @@ public class PriorityQueue {
         this.tasks.add(index, task);
     }
 
-    public Task take() {
+    public PhoneDictionary.Task take() {
         return tasks.poll();
     }
 }
+*/
