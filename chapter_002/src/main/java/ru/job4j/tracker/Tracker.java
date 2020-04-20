@@ -63,7 +63,7 @@ public class Tracker {
         boolean result = false;
         int index = indexOf(id);
         if (index != -1) {
-            items.remove(items.get(index));
+            items.remove(index);
             result = true;
         }
         return result;

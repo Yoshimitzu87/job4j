@@ -21,6 +21,7 @@ public class Item {
         this.id = id;
     }
 
+
     public String getId() {
         return id;
     }
@@ -35,5 +36,10 @@ public class Item {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("%s %s", getId(), getName());
     }
 }
