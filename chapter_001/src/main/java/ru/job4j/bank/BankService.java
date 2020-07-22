@@ -62,9 +62,14 @@ public class BankService {
                 rsl = false;
             } else {
                 Account destAccount = findByRequisite(destPassport, destRequisite);
-                double value = srcAccount.getBalance() - amount;
-                srcAccount.setBalance(value);
-                destAccount.setBalance((destAccount.getBalance() + amount));
+                if (destAccount == null) {
+                    rsl = false;
+                } else {
+
+                    double value = srcAccount.getBalance() - amount;
+                    srcAccount.setBalance(value);
+                    destAccount.setBalance((destAccount.getBalance() + amount));
+                }
             }
             return rsl;
     }
