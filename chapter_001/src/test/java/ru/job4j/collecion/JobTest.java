@@ -4,8 +4,7 @@ package ru.job4j.collecion;
 import org.junit.Test;
 import java.util.Comparator;
 
-import static org.hamcrest.Matchers.greaterThan;
-import static org.hamcrest.Matchers.lessThan;
+import static org.hamcrest.Matchers.*;
 import static org.junit.Assert.assertThat;
 
 public class JobTest {
@@ -35,5 +34,15 @@ public class JobTest {
                 new Job("о1", 4),
                 new Job("о2", 5)
         );
-        assertThat(rsl,  greaterThan(0));}
+        assertThat(rsl,  greaterThan(0));
+    }
+    @Test
+    public void whenSameName() {
+        Comparator<Job> downCmpNamePriority = new JobDescByNameUp().thenComparing(new JobDescByPriorityUp());
+        int rsl = downCmpNamePriority.compare(
+                new Job("Job11", 3),
+                new Job("Job11", 4)
+        );
+        assertThat(rsl, lessThan(0));
+    }
 }
