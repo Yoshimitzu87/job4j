@@ -6,13 +6,24 @@ import java.util.List;
 import java.util.Map;
 
 public class BankService {
+    /**
+     *поле содержит всех пользователей системы с привязанными к ним счетами.
+     */
     private Map<User, List<Account>> users = new HashMap<>();
 
+    /**
+     * Этот метод  добавляет пользователя в систему.
+     * @param user - пользователь
+     */
     public void addUser(User user) {
         users.putIfAbsent(user, new ArrayList<Account>());
 
     }
 
+    /**
+     * Добавляет новый счет к пользователю
+     * @param passport - номер паспорта.
+     */
     public void addAccount(String passport, Account account) {
         User user = findByPassport(passport);
         if (user != null){
@@ -25,6 +36,10 @@ public class BankService {
 
     }
 
+    /**
+     * Метод ищет пользователя по номеру паспорта
+     * @param passport - номер паспорта.
+     */
     public User findByPassport(String passport) {
         User user = null;
         for (User index : users.keySet()){
@@ -37,6 +52,11 @@ public class BankService {
         return user;
     }
 
+    /**
+     * Метод ищет счет пользователя по реквизитам
+     * @param passport - номер паспорта.
+     * @param requisite - номер счета.
+     */
     public Account findByRequisite (String passport, String requisite) {
         Account account = null;
         User user = findByPassport(passport);
