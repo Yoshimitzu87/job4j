@@ -19,15 +19,15 @@ public class StartUI {
                 new FindByIdAction(),
                 new ExitMenuAction()
         };
-        new StartUI().init(valid, tracker,Arrays.asList(actions));
+        new StartUI().init(valid, tracker, Arrays.asList(actions));
     }
 
 
-    public void init(Input input, Tracker tracker, List <UserAction> actions) {
+    public void init(Input input, Tracker tracker, List<UserAction> actions) {
         boolean run = true;
         while (run) {
             this.showMenu(actions);
-            int select = input.askInt("Select: ",actions.size());
+            int select = input.askInt("Select: ", actions.size());
             UserAction action = actions.get(select);
             run = action.execute(input, tracker);
         }

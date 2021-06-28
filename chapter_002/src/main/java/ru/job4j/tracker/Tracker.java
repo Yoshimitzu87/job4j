@@ -73,7 +73,7 @@ public class Tracker {
     public boolean replace(String id, Item item) {
         boolean result = false;
         int index = indexOf(id);
-        if (index != -1){
+        if (index != -1) {
             item.setId(id);
             items.set(index, item);
             result = true;
