@@ -14,4 +14,6 @@
 
 https://github.com/Yoshimitzu87/job4j
 
+[![codecov](https://codecov.io/gh/Yoshimitzu87/job4j/branch/master/graph/badge.svg?token=L8JS6U8R1K)](https://codecov.io/gh/Yoshimitzu87/job4j)
+
 "# job4j" 
