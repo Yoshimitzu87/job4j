@@ -1,6 +1,5 @@
 package ru.job4j.collecion;
 
-import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.Iterator;
@@ -8,9 +7,7 @@ import java.util.Set;
 import java.util.TreeSet;
 
 import static org.hamcrest.core.Is.is;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertThat;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 public class UserTest {
     @Test

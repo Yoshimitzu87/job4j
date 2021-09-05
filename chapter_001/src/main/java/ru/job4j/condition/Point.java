@@ -1,7 +1,7 @@
 package ru.job4j.condition;
 
-import static java.lang.Math.sqrt;
 import static java.lang.Math.pow;
+import static java.lang.Math.sqrt;
 
 /**
  * Point.
@@ -35,6 +35,7 @@ public class Point {
         this.x = first;
         this.y = second;
     }
+
     public Point(int x, int y, int z) {
         this.x = x;
         this.y = y;

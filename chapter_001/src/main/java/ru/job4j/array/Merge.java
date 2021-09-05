@@ -26,7 +26,7 @@ public class Merge {
                     result[i + 1] = tmp;
                 }
             }
-            }
-            System.out.println(Arrays.toString(result));
+        }
+        System.out.println(Arrays.toString(result));
     }
 }

@@ -1,11 +1,11 @@
 package ru.job4j.tracker;
 
 import org.junit.Test;
-import static org.junit.Assert.assertThat;
-import static org.hamcrest.Matchers.lessThan;
-import static org.hamcrest.Matchers.greaterThan;
 
 import java.util.Comparator;
+
+import static org.hamcrest.Matchers.lessThan;
+import static org.junit.Assert.assertThat;
 
 public class SortByItemNameTest {
     @Test

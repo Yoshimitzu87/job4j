@@ -13,7 +13,6 @@ public class ValidateInput implements Input {
     }
 
 
-
     @Override
     public int askInt(String question) {
         boolean invalid = true;

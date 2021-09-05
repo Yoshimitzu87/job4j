@@ -1,16 +1,14 @@
 package ru.job4j.tracker;
 
 
-import java.util.Random;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class Tracker {
 
 
     private final List<Item> items = new ArrayList<>();
-
-
 
 
     public Item add(Item item) {
@@ -56,7 +54,6 @@ public class Tracker {
         }
         return rsl;
     }
-
 
 
     public boolean deleteId(String id) {

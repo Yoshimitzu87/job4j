@@ -1,6 +1,6 @@
 package ru.job4j.loop;
 /**
- *Board.
+ * Board.
  *
  * @author Anton Frolov (spitfires111@gmail.com)
  * @version $Id$

@@ -11,7 +11,7 @@ public class LogicTest {
         Logic logic = new Logic(5) {
             @Override
             public int[][] convert() {
-                return new int[][] {
+                return new int[][]{
                         {0, 0, 1, 0, 0},
                         {0, 0, 1, 0, 0},
                         {0, 0, 1, 0, 0},
@@ -28,7 +28,7 @@ public class LogicTest {
         Logic logic = new Logic(5) {
             @Override
             public int[][] convert() {
-                return new int[][] {
+                return new int[][]{
                         {0, 0, 0, 0, 0},
                         {0, 0, 0, 0, 0},
                         {1, 1, 1, 1, 1},
@@ -45,7 +45,7 @@ public class LogicTest {
         Logic logic = new Logic(5) {
             @Override
             public int[][] convert() {
-                return new int[][] {
+                return new int[][]{
                         {0, 0, 1, 0, 0},
                         {0, 0, 1, 0, 0},
                         {1, 1, 0, 1, 1},

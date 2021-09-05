@@ -2,6 +2,7 @@ package ru.job4j.dummybot;
 
 /**
  * Dummy.
+ *
  * @author Anton Frolov (spitfires111@gmail.com)
  * @version $Id$
  * @since 0.1
@@ -9,6 +10,7 @@ package ru.job4j.dummybot;
 public class DummyBot {
     /**
      * Отвечает на вопросы.
+     *
      * @param question Вопрос от клиента.
      * @return Ответ.
      */

@@ -1,6 +1,5 @@
 package ru.job4j.collecion;
 
-import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 

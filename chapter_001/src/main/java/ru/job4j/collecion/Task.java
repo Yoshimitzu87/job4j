@@ -1,6 +1,6 @@
 package ru.job4j.collecion;
 
-public  class Task {
+public class Task {
     private String number;
     private String description;
 

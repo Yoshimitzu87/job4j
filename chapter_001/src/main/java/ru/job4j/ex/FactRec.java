@@ -2,11 +2,12 @@ package ru.job4j.ex;
 
 public class FactRec {
     public static int calc(int n) {
-        if(n == 1 || n == 0) return n;
-        else {return calc(n - 1) * n;}
+        if (n == 1 || n == 0) {
+            return n;
+        } else {
+            return calc(n - 1) * n;
+        }
     }
-
-
 
 
     public static void main(String[] args) {

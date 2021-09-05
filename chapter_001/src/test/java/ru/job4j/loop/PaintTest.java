@@ -5,7 +5,7 @@ import org.junit.Test;
 import java.util.StringJoiner;
 
 import static org.hamcrest.Matchers.is;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertThat;
 
 /**
  * Pyramid.
@@ -48,6 +48,7 @@ public class PaintTest {
                 )
         );
     }
+
     @Test
     public void whenPyramid() {
         Paint paint = new Paint();

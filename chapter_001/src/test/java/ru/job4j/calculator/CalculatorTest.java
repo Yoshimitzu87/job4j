@@ -6,9 +6,9 @@ import org.junit.Test;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
-public class CalculatorTest  {
+public class CalculatorTest {
     @Test
-    public void whenAddOnePlusOneThenTwo()  {
+    public void whenAddOnePlusOneThenTwo() {
         Calculator calc = new Calculator();
         calc.add(1D, 1D);
         double result = calc.getResult();
@@ -17,7 +17,7 @@ public class CalculatorTest  {
     }
 
     @Test
-    public void whenDivOneOnOneThenOne()  {
+    public void whenDivOneOnOneThenOne() {
         Calculator calc = new Calculator();
         calc.div(1D, 1D);
         double result = calc.getResult();
@@ -26,7 +26,7 @@ public class CalculatorTest  {
     }
 
     @Test
-    public void whenSubtractTwoMinusOneThenOne()  {
+    public void whenSubtractTwoMinusOneThenOne() {
         Calculator calc = new Calculator();
         calc.subtract(2D, 1D);
         double result = calc.getResult();
@@ -35,7 +35,7 @@ public class CalculatorTest  {
     }
 
     @Test
-    public void whenMultipleTwoOnTwoThenFour()  {
+    public void whenMultipleTwoOnTwoThenFour() {
         Calculator calc = new Calculator();
         calc.multiple(2D, 2D);
         double result = calc.getResult();

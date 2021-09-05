@@ -1,4 +1,5 @@
 package ru.job4j.calculator;
+
 /**
  * Calculator.
  *
@@ -9,24 +10,29 @@ package ru.job4j.calculator;
 public class Calculator {
     private double result;
 
-    /** СЛОЖЕНИЕ
+    /**
+     * СЛОЖЕНИЕ
      */
     public void add(double first, double second) {
         this.result = first + second;
     }
 
-    /** ВЫЧИТАНИЕ
+    /**
+     * ВЫЧИТАНИЕ
      */
     public void subtract(double first, double second) {
         this.result = first - second;
     }
-    /** УМНОЖЕНИЕ
+
+    /**
+     * УМНОЖЕНИЕ
      */
     public void multiple(double first, double second) {
         this.result = first * second;
     }
 
-    /** ДЕЛЕНИЕ
+    /**
+     * ДЕЛЕНИЕ
      */
     public void div(double first, double second) {
         this.result = first / second;

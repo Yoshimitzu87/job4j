@@ -15,10 +15,11 @@ public class FindEl {
 
         return rsl;
     }
-    public static void main (String [] args){
-        String[] str  = {"str1", "str2"};
-        try{
-            indexOf(str,"str3");
+
+    public static void main(String[] args) {
+        String[] str = {"str1", "str2"};
+        try {
+            indexOf(str, "str3");
         } catch (ElementNotFoundException e) {
             e.printStackTrace();
         }

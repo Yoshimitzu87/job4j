@@ -5,6 +5,7 @@ public class ExitMenuAction implements UserAction {
     public String name() {
         return "=== Exit Menu ===";
     }
+
     @Override
     public boolean execute(Input input, Tracker tracker) {
         return false;
